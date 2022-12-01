@@ -15,10 +15,10 @@ export class PostService {
         return fetch("http://localhost:3000/posts/").then((res): Promise<Post[]> => res.json())
     }
 
-    fetchData() {
+    fetchPostsData() {
         let p = this.getAllPosts()
         p.then(res => {
-            this.posts = res
+            this.posts = res;
         })
     }
 
