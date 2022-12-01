@@ -1,0 +1,23 @@
+<div>
+    <h1 class="text-center mt-3 mb-4">Post attivi</h1>
+</div>
+
+<div>
+    <router-outlet></router-outlet>
+</div>
+
+<div *ngFor="let postAt of posts" class="mb-2">
+
+    <app-post-card [p]="postAt" (detailId)="detail($event)" (id)="elim($event)">
+        <a class="btn btn-danger" (click)="disattiva(postAt.id)">Disattiva</a>
+    </app-post-card>
+
+    <!-- <div *ngIf="posts.length == 1">
+        <a class="btn btn-primary" [routerLink]="[':id']">DETAIL</a>
+    </div> -->
+
+    <!-- <div *ngIf="posts.length == 1">
+        <a class="btn btn-primary" [routerLink]="['/post/attivi']">BACK</a>
+    </div> -->
+
+</div>

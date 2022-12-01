@@ -1,0 +1,12 @@
+<div>
+    <h1 class="text-center mt-3 mb-4">Post inattivi</h1>
+</div>
+<div *ngFor="let postIn of posts" class="mb-2">
+    <app-post-card [p]="postIn" (id)="detail($event)">
+        <a class="btn btn-success" (click)="attiva(postIn.id)">Attiva</a>
+    </app-post-card>
+
+    <!-- <div *ngIf="posts.length == 1">
+        <a class="btn btn-primary" [routerLink]="['/post/inattivi']">BACK</a>
+    </div> -->
+</div>

@@ -1,0 +1,15 @@
+<h1>dettagli works!</h1>
+
+<div class="card" [ngClass]="{
+    'bg-warning': p.type == 'news',
+    'bg-info': p.type == 'education',
+    'text-bg-dark': p.type == 'politics'}">
+    <div class="card-header h5">
+        {{ p.id }} - {{ p.title }}
+    </div>
+    <div class="card-body">
+        <p class="card-text">
+            {{ p.body }}
+        </p>
+    </div>
+</div>
