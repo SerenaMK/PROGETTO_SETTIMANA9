@@ -6,9 +6,5 @@
 </ul>
 
 <div *ngIf="selectedUser" class="mt-4">
-    <h2>{{ selectedUser.id }} - {{ selectedUser.name }}</h2>
-    <p>
-        E-mail: {{ selectedUser.email }}<br>
-        Ruolo: {{ selectedUser.ruolo }}
-    </p>
+    <app-user-info [user]="selectedUser"></app-user-info>
 </div>
