@@ -29,6 +29,4 @@ export class DettagliComponent implements OnInit {
             return e.id == this.id
         })
     }
-
-    // this.posts.find((age) => {return age == this.id})
 }

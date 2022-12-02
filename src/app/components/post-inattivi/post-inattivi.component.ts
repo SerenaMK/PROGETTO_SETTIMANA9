@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Post } from '../../models/post';
 import { PostService } from '../../service/post.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-post-inattivi',
@@ -10,8 +11,9 @@ import { PostService } from '../../service/post.service';
 export class PostInattiviComponent implements OnInit {
 
     posts: Post[] = [];
+    id!: number;
 
-    constructor(private postSrv: PostService) { }
+    constructor(private postSrv: PostService, private router: Router) { }
 
     ngOnInit(): void {
         this.posts = this.postSrv.getPostFiltrati(false)
@@ -24,7 +26,16 @@ export class PostInattiviComponent implements OnInit {
         })
     }
 
+    elim(id: number) {
+        this.postSrv.eliminaDB(id).then(ok => {
+            if (ok) this.posts = this.posts.filter(e => !(e.id == id))
+            else console.log("ERRORE");
+        })
+    }
+
     detail(id: number) {
-        this.posts = this.posts.filter(e => (e.id == id));
+        this.router.navigate(['/post/inattivi', id])
+        this.posts = [];
+        this.id = id;
     }
 }
