@@ -9,12 +9,26 @@ import { PostService } from '../../service/post.service';
 })
 export class DettagliComponent implements OnInit {
 
-    @Input() p!: Post
-    @Input() currentId!: number;
+    posts: Post[] = []
+    currentPost!: Post | undefined;
 
-    constructor() { }
+    // Ottieni l'id dall'url
+    url = window.location.href;
+    id = Number(this.url.slice((this.url.indexOf('i/') + 2), this.url.length));
+
+    constructor(private postSrv: PostService) { }
 
     ngOnInit(): void {
+        this.posts = this.postSrv.getPostFiltrati(true);
+
+        console.log("DETTAGLI id: ", this.getPostUnico());
     }
 
+    getPostUnico(): void {
+        this.currentPost = this.posts.find((e) => {
+            return e.id == this.id
+        })
+    }
+
+    // this.posts.find((age) => {return age == this.id})
 }

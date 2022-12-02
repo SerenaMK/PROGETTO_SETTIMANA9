@@ -35,6 +35,10 @@ const routes: Route[] = [
                 component: UserInfoComponent
             }
         ]
+    },
+    {
+        path: "**",
+        redirectTo: ""
     }
 ];
 

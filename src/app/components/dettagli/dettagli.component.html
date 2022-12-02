@@ -1,15 +1,25 @@
-<h1>dettagli works!</h1>
+<h4 class="fst-italic text-muted mb-3">Dettaglio post</h4>
 
-<div class="card" [ngClass]="{
-    'bg-warning': p.type == 'news',
-    'bg-info': p.type == 'education',
-    'text-bg-dark': p.type == 'politics'}">
-    <div class="card-header h5">
-        {{ p.id }} - {{ p.title }}
-    </div>
-    <div class="card-body">
-        <p class="card-text">
-            {{ p.body }}
-        </p>
+<div *ngIf="currentPost != undefined">
+    <div class="card bg-opacity-25" [ngClass]="{
+    'bg-warning': currentPost.type == 'news',
+    'bg-info': currentPost.type == 'education',
+    'bg-dark': currentPost.type == 'politics'}">
+        <div class="card-header h5">
+            {{ currentPost.title }}
+        </div>
+        <div class="card-body">
+            <p class="card-text">
+                {{ currentPost.body }}
+            </p>
+        </div>
+        <div class="card-footer d-flex justify-content-between">
+            <p class="card-text mb-0">
+                Categoria: {{ currentPost.type }}
+            </p>
+            <p class="card-text mb-0 fst-italic">
+                Autore: {{ currentPost.type }}
+            </p>
+        </div>
     </div>
 </div>

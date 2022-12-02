@@ -47,4 +47,8 @@ export class PostAttiviComponent implements OnInit {
         // this.id.emit(id);
         // this.posts = this.posts.filter(e => (e.id == id));
     }
+
+    // onPostSelect(post: Post): void {
+    //     this.selectedPost = post;
+    // }
 }

@@ -9,7 +9,8 @@ import { UserService } from 'src/app/service/user.service';
 })
 export class UsersComponent implements OnInit {
 
-    users: User[] = []
+    users: User[] = [];
+    selectedUser?: User;
 
     constructor(private userSrv: UserService) { }
 
@@ -17,5 +18,9 @@ export class UsersComponent implements OnInit {
         this.users = this.userSrv.getUsers();
         console.log("INIT", this.users);
     }
+
+    onSelect(user: User): void {
+        this.selectedUser = user;
+      }
 
 }
