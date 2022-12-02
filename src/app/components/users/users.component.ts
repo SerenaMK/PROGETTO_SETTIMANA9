@@ -16,7 +16,6 @@ export class UsersComponent implements OnInit {
 
     ngOnInit(): void {
         this.users = this.userSrv.getUsers();
-        console.log("INIT", this.users);
     }
 
     onSelect(user: User): void {

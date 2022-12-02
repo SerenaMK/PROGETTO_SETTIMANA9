@@ -19,14 +19,12 @@ export class UserService {
         let u = this.getAllUsers()
         u.then(res => {
             this.users = res;
-            console.log("HELLO ", this.users);
             this.getUsers();
         })
     }
 
     getUsers(): User[] {
         let newArray = this.users;
-        console.log("CIAO ", newArray);
         return newArray
     }
 }

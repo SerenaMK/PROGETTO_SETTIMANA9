@@ -15,10 +15,11 @@ export class PostAttiviComponent implements OnInit {
 
     @Input() identifier!: number;
 
-    constructor(private postSrv: PostService, private router: Router) { }
+    constructor(private postSrv: PostService, private router: Router) {
+    }
 
     ngOnInit(): void {
-        this.posts = this.postSrv.getPostFiltrati(true)
+        this.posts = this.postSrv.getPostFiltrati(true);
     }
 
     disattiva(id: number) {
