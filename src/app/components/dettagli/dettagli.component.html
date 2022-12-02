@@ -1,13 +1,12 @@
-<h4 class="fst-italic text-muted mb-3">Dettaglio post</h4>
-
 <div *ngIf="currentPost != undefined">
+    <h3 class="text-center fst-italic mb-3">{{ currentPost.title }}</h3>
     <div class="card bg-opacity-25" [ngClass]="{
     'bg-warning': currentPost.type == 'news',
     'bg-info': currentPost.type == 'education',
     'bg-dark': currentPost.type == 'politics'}">
-        <div class="card-header h5">
+        <!-- <div class="card-header h5">
             {{ currentPost.title }}
-        </div>
+        </div> -->
         <div class="card-body">
             <p class="card-text">
                 {{ currentPost.body }}
@@ -18,7 +17,7 @@
                 Categoria: {{ currentPost.type }}
             </p>
             <p class="card-text mb-0 fst-italic">
-                Autore: {{ currentPost.type }}
+                Autore: {{ currentPost.author }}
             </p>
         </div>
     </div>

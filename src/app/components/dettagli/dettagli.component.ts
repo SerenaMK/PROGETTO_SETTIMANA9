@@ -20,8 +20,7 @@ export class DettagliComponent implements OnInit {
 
     ngOnInit(): void {
         this.posts = this.postSrv.getPostFiltrati(this.url.includes("inattivi") ? false : true);
-
-        console.log("DETTAGLI id: ", this.getPostUnico());
+        this.getPostUnico();
     }
 
     getPostUnico(): void {

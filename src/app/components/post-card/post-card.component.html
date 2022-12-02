@@ -3,7 +3,7 @@
     'bg-info': p.type == 'education',
     'text-bg-dark': p.type == 'politics'}">
     <div class="card-header h5">
-        {{ p.id }} - {{ p.title }}
+        <span appColora>{{ p.id }}</span> - {{ p.title | uppercase }}
     </div>
     <div class="card-body">
         <p class="card-text">

@@ -3,5 +3,6 @@ export interface Post {
     title: string,
     body: string,
     active: boolean,
-    type: string
+    type: string,
+    author: string
 }

@@ -12,6 +12,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { DettagliComponent } from './components/dettagli/dettagli.component';
 import { UsersComponent } from './components/users/users.component';
 import { UserInfoComponent } from './components/user-info/user-info.component';
+import { ColoraDirective } from './directives/colora.directive';
 
 @NgModule({
     declarations: [
@@ -23,7 +24,8 @@ import { UserInfoComponent } from './components/user-info/user-info.component';
         NavbarComponent,
         DettagliComponent,
         UsersComponent,
-        UserInfoComponent
+        UserInfoComponent,
+        ColoraDirective
     ],
     imports: [
         BrowserModule,
