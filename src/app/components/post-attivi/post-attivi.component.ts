@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Post } from '../../models/post';
 import { PostService } from '../../service/post.service';
 import { Router } from '@angular/router';
@@ -19,8 +19,6 @@ export class PostAttiviComponent implements OnInit {
 
     ngOnInit(): void {
         this.posts = this.postSrv.getPostFiltrati(true)
-    }
-    ngOnChanges(): void {
     }
 
     disattiva(id: number) {

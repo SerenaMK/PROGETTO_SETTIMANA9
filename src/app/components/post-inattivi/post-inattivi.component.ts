@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Post } from '../../models/post';
 import { PostService } from '../../service/post.service';
 import { Router } from '@angular/router';
@@ -13,6 +13,8 @@ export class PostInattiviComponent implements OnInit {
     posts: Post[] = [];
     id!: number;
 
+    @Input() identifier!: number;
+
     constructor(private postSrv: PostService, private router: Router) { }
 
     ngOnInit(): void {
@@ -22,7 +24,7 @@ export class PostInattiviComponent implements OnInit {
     attiva(id: number) {
         this.postSrv.attivaDB(id).then(ok => {
             if (ok) this.posts = this.posts.filter(e => !(e.id == id))
-            else console.log("ERRORE THEN");
+            else console.log("ERRORE");
         })
     }
 
