@@ -14,23 +14,19 @@ const routes: Route[] = [
     },
     {
         path: "post/attivi",
-        component: PostAttiviComponent,
-        children: [
-            {
-                path: ":id",
-                component: DettagliComponent
-            }
-        ]
+        component: PostAttiviComponent
+    },
+    {
+        path: "post/attivi/:id",
+        component: DettagliComponent
     },
     {
         path: "post/inattivi",
-        component: PostInattiviComponent,
-        children: [
-            {
-                path: ":id",
-                component: DettagliComponent
-            }
-        ]
+        component: PostInattiviComponent
+    },
+    {
+        path: "post/inattivi/:id",
+        component: DettagliComponent
     },
     {
         path: "users",
